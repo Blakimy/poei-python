@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import mysql.connector
+
+#Exercice: Créer un script python qui génère des data fixtures dans la table utilisateur (5000 entrées).
+
+from faker import Faker
+fake = Faker()
+
+def python_seed1():
+    for i in range(10):
+        print(fake.name())
+    python_seed1()
+
+
+

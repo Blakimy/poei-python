@@ -1,0 +1,16 @@
+CREATE VIEW view_exercice AS
+SELECT nom, prenom
+FROM utilisateur
+WHERE postal_code > 6000;
+
+CREATE TABLE lien(groupe_id int, user_id int), ADD CONSTRAINT FOREIGN KEY (groupe_id) REFERENCES groupe(id), ADD CONSTRAINT FOREIGN KEY (utilisateur_id) REFERENCES utilisateur(id)
+
+CREATE TABLE groupe (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, nom VARCHAR(100))
+
+CREATE TABLE utilisateur_groupe(
+    id int(11) PRIMARY KEY AUTO_INCREMENT,
+    utilisateur_id int NOT NULL,
+    groupe_id int NOT NULL,
+    user_id int),
+    FOREIGN KEY(utilisateur_id) REFERENCES utilisateur(id),
+    FOREIGN KEY(groupe_id) REFERENCES groupe(id))

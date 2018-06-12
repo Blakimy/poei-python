@@ -1,0 +1,17 @@
+"""def python_seed():
+    cnx = mysql.connector.connect(user='root', database='utilisateur',database)
+    cursor = cnx.cursor()
+    i=0
+    while i < 5000:
+        cnx = mysql.connector.insert("INSERT INTO employees "
+               "(nom, prenom, email, date_naissance, pays, ville, code_postal) "
+               "VALUES ("Queen", "Oliver", "arrow@teamarrow.com", "1980/05/28", "Na ilha", "This City", "12345")")
+        i = i +1
+python_seed();""""
+
+
+    """" INSERT
+        INTO
+        `utilisateur`(`id`, `nom`, `prenom`, `email`, `date_naissance`, `pays`, `ville`, `code_postal`)
+        VALUES(1, "Queen", "Oliver", "arrow@teamarrow.com", "1980/05/28", "Na ilha", "This City", "12345")
+"""

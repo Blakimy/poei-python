@@ -1,0 +1,6 @@
+    cursor.execute("""SET FOREIGN_KEY_CHEKS=0""")
+    cursor.execute("""TRUNCATE TABLE groupe""")
+    cursor.execute("""TRUNCATE TABLE utilisateur""")
+    cursor.execute("""TRUNCATE TABLE utilisateur_groupe""")
+    cursor.execute("""SET FOREIGN_KEY_CHEKS=0""")
+drop_user()
