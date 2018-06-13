@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import hug
+import requests
+from bs4 import BeautifulSoup
+import mysql.connector
+
+db = mysql.connector.connect(host="127.0.0.1", user="root", database="Pokemon")
+cursor = db.cursor()
+
+def parse_html():
+    url="https://pokemondb.net/pokedex/all"
+    response = requests.get(url)
+    html = str(response.content)
+    soup = BeautifulSoup(html, "html.parser")
+    tab = soup.find(id="pokedex")
+    for link in tab.find_all("tr"):
+        tt = []
+        for l in link.find_all("td"):
+            tt.append(l.text)
+            print(tt)
+parse_html()
+
+#add table
+def create_table
+    CREATE TABLE Pokemon (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP
+    )
