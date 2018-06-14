@@ -5,15 +5,33 @@
     cursor.execute("""SET FOREIGN_KEY_CHEKS=0""")
 drop_user()
 
+        CREATE TABLE Pokemon (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    type VARCHAR(9) NOT NULL,
+    Total INT(100) NOT NULL,
+    HP int(1000) NOT NULL,
+    Attack int(1000) NOT NULL,
+    Defense int (1000)NOT NULL,
+    SP int(1000 NOT NULL)
+    )
 
-    CREATE TABLE Pokemon (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Nom VARCHAR(30) NOT NULL,
-    type VARCHAR(30) NOT NULL,
-    Total VARCHAR(50),
-    HP VARCHAR(50),
-    Attack VARCHAR(50),
-    Defense
-    Sp.Atk
-    Sp.Def
-    Speed
+    CREATE TABLE Type (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    type VARCHAR(9) NOT NULL,
+    Total INT(100) NOT NULL,
+    HP int(1000) NOT NULL,
+    Attack int(1000) NOT NULL,
+    Defense int (1000)NOT NULL,
+    SP int(1000 NOT NULL)
+    )
+
+
+
+    user = (i, fake.first_name(), fake.last_name(), fake.email(), fake.date(pattern="%Y-%m-%d", end_datetime=None),
+            fake.country(), fake.city(), fake.postcode())
+    cursor.execute(
+        """INSERT INTO `utilisateur`(`id`, `nom`, `prenom`, `email`, `date_naissance`, `pays`, `ville`, `code_postal`) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)""",
+        user)
+    i += 1

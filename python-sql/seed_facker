@@ -27,6 +27,10 @@ def create_group():
         cursor.execute = ("""INSERT INTO `utilisateur`(`id`, `nom`) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)""",
         group)
 
+
+#cursor.execute("INSERT INTO `pokedex`(`number`, `name`, `type`, `total`, `hp`, `attack`, `defense`, `sp.atk`, `sp.def`) VALUES(" +str(tt)+ ")")
+#cursor.execute("""INSERT INTO `pokedex`(`number`, `name`, `type`, `total`, `hp`, `attack`, `defense`, `sp.atk`, `sp.def`) VALUES(tt[0], s, %s, %d, %d, %d, %d, %d, %d)""", tt)
+
 insert_5000_user()
 create_group()
 
