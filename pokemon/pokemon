@@ -5,15 +5,32 @@ import requests
 from bs4 import BeautifulSoup
 import mysql.connector
 
-db = mysql.connector.connect(host="127.0.0.1", user="root", database="Pokemon")
+db = mysql.connector.connect(host="127.0.0.1", user="root", database="Pokedex")
 cursor = db.cursor()
 
-    soup = BeautifulSoup(open(r"C:\Users\Yannick\Documents\poei_python\pokemon\pokemon_site.html"), "html.parser")
-    tab = soup.find(id="pokedex")
-    tt = []
-    for link in tab.find_all("tr"):
-        for l in link.find_all("td"):
-            tt.append(l.text)
+soup = BeautifulSoup(open(r"C:\Users\Yannick\Documents\poei_python\pokemon\pokemon_site.html"), "html.parser")
+tab = soup.find(id="pokedex")
 
+list = []
+for pokemons_data in tab.find_all("tr"):#parcour chaque tr à partir de l'lément pokedex html à partir de l'id pokedex
+    #pokemons data contien tous les tr
+    pokemons = []
+    for data in pokemons_data.find_all("td"):#parcour chaque td à partir du tr courant
+        #data contien tous les balise td sous form html.
+        #print(pokemon_data.text)
+        pokemons.append(data.text)
+    pokemons.append(list)
+    print(list)
+    #print(pokemons)
 
-    print("INSERT INTO `pokedex`(`number`, `name`, `type`, `total`, `hp`, `attack`, `defense`, `sp.atk`, `sp.def`) VALUES(" + str(tt[0]) + str(tt[1]+")")
+    #print(pokemons)
+    #pokemons[0]) + "','" + str(pokemons[1]) + "','" + str(pokemons[2]) + "','" + str(pokemons[3]) + "','" + str(pokemons[4]) + "','" + str(
+    #pokemons[5]) + "','" + str(pokemons[6]) + "','" + str(pokemons[7]) + "','" + str(pokemons[8]) + "')"
+    #cursor.execute(query)
+
+#print(query)
+
+# print(pokemon)
+db.commit()
+cursor.close()
+db.close()

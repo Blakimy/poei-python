@@ -1,0 +1,14 @@
+print("INSERT INTO `pokedex`(`number`, `name`, `type`, `total`, `hp`, `attack`, `defense`, `sp.atk`, `sp.def`) VALUES(" + str(tt[0]) +" "+ str(tt[1] +" "+ str(tt[2]) +" "+ str(tt[3]) +" "+ str(tt[4]) +" "+ str(tt[5]) +" "+ str(tt[6]) +" "+ str(tt[7])+" "+ str(tt[8]) +" "+ ")"))
+
+CREATE TABLE pokemon (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    number INT(100),
+    name VARCHAR(100) NOT NULL,
+    type VARCHAR(9) NOT NULL,
+    total INT(100) NOT NULL,
+    HP int(100) NOT NULL,
+    Attack int(100) NOT NULL,
+    Defense int (100) NOT NULL,
+    atk int(100) NOT NULL,
+	def int(100) NOT NULL
+)
